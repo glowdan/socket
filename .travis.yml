@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 language: php
 
@@ -8,6 +8,8 @@ php:
   - 7
 
 before_script:
+  - sudo apt-get update
+  - sudo apt-get upgrade
   - composer self-update
   - composer require satooshi/php-coveralls:dev-master
   - composer install
